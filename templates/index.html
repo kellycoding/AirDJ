@@ -7,10 +7,8 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 <body>
+    <button id="volumeButton">Volume</button>
     <svg id="rect"></svg>
-    <!--
-        <div class="bar">Volume</div>
-    -->
     <div class="scale"></div>
 </body>
 <script>
@@ -23,22 +21,29 @@
         .attr('fill', '#1ac42d');
 
     function moveUp(shape, iter) {
-        for (let i=0; i<iter; i++) {
-            shape.transition()
-                .duration(1000)
-                .attr('y', i)
+        shape.transition()
+            .duration(1000)
+            .attr('height', 60)
         }
-    }
 
     function moveDown(shape, iter) {
-        for (let i=0; i<iter; i++) {
-            shape.transition()
-                .duration(1000)
-                .attr('y', -i)
+        shape.transition()
+            .duration(1000)
+            .attr('height', 30)
         }
+    
+
+    const b = document.getElementById("volumeButton");
+    b.onpointerdown = function() {
+        rectangle.transition()
+            .duration(1000)
+            .attr('y', 0)
     }
-    moveUp(rectangle, 10);
-    moveDown(rectangle, 10);
+    b.onpointerup = function() {
+        rectangle.transition()
+            .duration(1000)
+            .attr('y', 275)
+    }
     
 </script>
 </html>

@@ -17,3 +17,9 @@ body {
 #rect {
     height: 300px;
 }
+
+#volumeButton {
+    margin-left: -100px;
+    margin-right: 36px;
+    z-index: 4
+}

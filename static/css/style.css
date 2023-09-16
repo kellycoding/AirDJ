@@ -1,0 +1,19 @@
+body {
+    margin-left: 20%;
+    margin-top: 25%;
+}
+
+
+.scale {
+    border-style: solid;
+    border-color: grey;
+    border-width: 3px;
+    width: 60px;
+    height: 300px;
+    z-index: 3;
+    margin-top: -305px;
+}
+
+#rect {
+    height: 300px;
+}

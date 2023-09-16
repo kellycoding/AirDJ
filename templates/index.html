@@ -1,13 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>{% block title%} {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 <body>
-    <h1>Hi</h1>
-
+    <svg id="rect"></svg>
+    <!--
+        <div class="bar">Volume</div>
+    -->
+    <div class="scale"></div>
 </body>
+<script>
+    var svg = d3.select("#rect").append("svg")
+
+    const rectangle = svg.append('rect')
+        .attr('width', 65)
+        .attr('height', 30)
+        .attr('y', 275)
+        .attr('fill', '#1ac42d');
+
+    function moveUp(shape, iter) {
+        for (let i=0; i<iter; i++) {
+            shape.transition()
+                .duration(1000)
+                .attr('y', i)
+        }
+    }
+
+    function moveDown(shape, iter) {
+        for (let i=0; i<iter; i++) {
+            shape.transition()
+                .duration(1000)
+                .attr('y', -i)
+        }
+    }
+    moveUp(rectangle, 10);
+    moveDown(rectangle, 10);
+    
+</script>
 </html>

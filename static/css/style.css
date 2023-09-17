@@ -1,6 +1,6 @@
 body {
     margin-left: 20%;
-    margin-top: 25%;
+    margin-top: 5%;
 }
 
 
@@ -22,4 +22,8 @@ body {
     margin-left: -100px;
     margin-right: 36px;
     z-index: 4
+}
+
+h1 {
+    font-family: sans-serif;
 }

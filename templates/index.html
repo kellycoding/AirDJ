@@ -7,6 +7,7 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 <body>
+    <h1>Air DJ Visualizer Beta</h1>
     <button id="volumeButton">Volume</button>
     <svg id="rect"></svg>
     <div class="scale"></div>
@@ -20,19 +21,6 @@
         .attr('y', 275)
         .attr('fill', '#1ac42d');
 
-    function moveUp(shape, iter) {
-        shape.transition()
-            .duration(1000)
-            .attr('height', 60)
-        }
-
-    function moveDown(shape, iter) {
-        shape.transition()
-            .duration(1000)
-            .attr('height', 30)
-        }
-    
-
     const b = document.getElementById("volumeButton");
     b.onpointerdown = function() {
         rectangle.transition()
@@ -44,6 +32,7 @@
             .duration(1000)
             .attr('y', 275)
     }
+    
     
 </script>
 </html>
